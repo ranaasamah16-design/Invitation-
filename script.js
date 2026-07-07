@@ -116,25 +116,20 @@ document.querySelectorAll("a[href^='#']").forEach(anchor => {
 // RSVP Form
 // ===========================
 
-const rsvpForm = document.getElementById("rsvpForm");
+const form = document.getElementById("rsvpForm");
+const thanks = document.getElementById("thanksMessage");
 
-if (rsvpForm) {
+if(form){
 
-    rsvpForm.addEventListener("submit", function (e) {
+form.addEventListener("submit",function(e){
 
-        e.preventDefault();
+e.preventDefault();
 
-        const guestName =
-            document.getElementById("guestName").value;
+const name=document.getElementById("guestName").value;
 
-        alert(
-            "Thank you, " +
-            guestName +
-            "! Your RSVP has been received. ❤️"
-        );
+thanks.innerHTML="❤️ Thank you, <b>"+name+"</b>! Your RSVP has been recorded. We look forward to celebrating with you.";
 
-        rsvpForm.reset();
+form.reset();
 
-    });
-
+});
 }
